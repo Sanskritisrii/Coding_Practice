@@ -255,22 +255,43 @@ public class Main {
 //
 //        Object hm = ht.clone();
 
+//
+//        int arr[] = {2,7,11,15,3};
+//        int target = 5;
+//
+//        Hashtable<Integer,Integer> ht = new Hashtable<>();
+//
+//        for (int num : arr) {
+//
+//            int result = target-num;
+//            if (ht.containsKey(result)) {
+//                System.out.println("Pair is: " +result + " " + num);
+//                return;
+//            }
+//
+//            ht.put(num, 1);
+//
+//        }
+        int[] arr = {0,1,2,3,4,5,6,7,8,9,10};
 
-        int arr[] = {2,7,11,15,3};
-        int target = 5;
+        int findNumber = 2;
 
-        Hashtable<Integer,Integer> ht = new Hashtable<>();
+        int arrSize = arr.length - 1;
 
-        for (int num : arr) {
+        for (int i = 0; i <= arrSize; ) {
 
-            int result = target-num;
-            if (ht.containsKey(result)) {
-                System.out.println("Pair is: " +result + " " + num);
-                return;
+            int mid = (i + arrSize) / 2;
+
+            if (arr[mid] == findNumber) {
+                System.out.println("Found at index " + mid);
+                break;
             }
 
-            ht.put(num, 1);
-
+            if (findNumber > arr[mid]) {
+                i = mid + 1;
+            } else {
+                arrSize = mid - 1;
+            }
         }
 
 
