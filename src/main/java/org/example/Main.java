@@ -272,38 +272,26 @@ public class Main {
 //            ht.put(num, 1);
 //
 //        }
-        int[] arr = {0,1,2,3,4,5,6,7,8,9,10};
 
-        int findNumber = 2;
+        int k = 0;
+        int[] arr = {0,1,2,3,4,5,6,7,8,9,10}; //11
+        int findNumber = 1;
+        int arrSize = arr.length;
+        for (int i=0;i<arrSize;i++){
+            int mid = arrSize - ((arrSize - i + 1) / 2);
 
-        int arrSize = arr.length - 1;
-
-        for (int i = 0; i <= arrSize; ) {
-
-            int mid = (i + arrSize) / 2;
-
-            if (arr[mid] == findNumber) {
-                System.out.println("Found at index " + mid);
+            if (findNumber == arr[mid]){
+                System.out.println("position at "+ mid);
                 break;
             }
-
-            if (findNumber > arr[mid]) {
-                i = mid + 1;
-            } else {
-                arrSize = mid - 1;
+            if (findNumber > arr[mid]){
+                i = (arrSize/2)  ;
+            }else{
+                arrSize =mid;
+                i--;
             }
+
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
+
